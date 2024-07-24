@@ -8,6 +8,15 @@ public class Main {
         int count = 0;
 
         while(true) {
+            // count가 10 도달 시 값을 앞으로 옮기기
+            if(count == array.length) {
+                for (int i = 0; i < array.length - 1; i++) {
+                    array[i] = array[i + 1];
+                }
+                // count 1 내려서 array[9]에 저장
+                count--;
+            }
+
             System.out.print("첫번째 숫자를 입력해주세요. : ");
             int a = sc.nextInt();
             System.out.print("두번째 숫자를 입력해주세요. : ");
@@ -55,7 +64,7 @@ public class Main {
                 for(int i = 0; i< array.length; i++) {
                     System.out.println((i+1)+"결과 : "+array[i]);
                 }
-                
+
                 break;
             }
         }
