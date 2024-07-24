@@ -1,12 +1,13 @@
-
 import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+        float[] array = new float[10];
+        float result = 0;
+        int count = 0;
 
         while(true) {
-            float result = 0;
             System.out.print("첫번째 숫자를 입력해주세요. : ");
             int a = sc.nextInt();
             System.out.print("두번째 숫자를 입력해주세요. : ");
@@ -20,18 +21,26 @@ public class Main {
                 case '+':
                     result = a+b;
                     System.out.println("답은 : "+result);
+                    array[count] = result;
+                    count++;
                     break;
                 case '-':
                     result = a-b;
                     System.out.println("답은 : "+result);
+                    array[count] = result;
+                    count++;
                     break;
                 case '*':
                     result = a*b;
                     System.out.println("답은 : "+result);
+                    array[count] = result;
+                    count++;
                     break;
                 case '/':
                     result = a/b;
                     System.out.println("답은 : "+result);
+                    array[count] = result;
+                    count++;
                     break;
                 default :
                     System.out.println("아직 미개발 연산 기호입니다.");
@@ -41,6 +50,12 @@ public class Main {
             String symbol = sc.nextLine();
             if(symbol.equals("exit")) {
                 System.out.println("프로그램이 종료됩니다.");
+
+                // 배열 내부 확인용
+                for(int i = 0; i< array.length; i++) {
+                    System.out.println((i+1)+"결과 : "+array[i]);
+                }
+                
                 break;
             }
         }
