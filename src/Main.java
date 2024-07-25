@@ -16,7 +16,7 @@ public class Main {
                     System.out.print("[두번째 숫자를 입력해주세요.] : ");
                     int b = sc.nextInt();
                     sc.nextLine();
-                    System.out.println("[+,-,*,/]");
+                    System.out.println("[+,-,*,/,%]");
                     System.out.print("[연산 기호를 입력해주세요.] : ");
                     char c = sc.next().charAt(0);
                     double result = ar.calculate(a,b,c);

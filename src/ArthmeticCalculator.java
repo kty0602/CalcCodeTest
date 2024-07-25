@@ -5,6 +5,7 @@ public class ArthmeticCalculator extends Calculator {
     SubtractOperator sub = new SubtractOperator();
     MultiplyOperator mul = new MultiplyOperator();
     DivideOperator div = new DivideOperator();
+    ModOperator mod = new ModOperator();
 
     @Override
     public double calculate(double a, double b, char c) throws ZeroException, WrongSymbolException {
@@ -24,6 +25,9 @@ public class ArthmeticCalculator extends Calculator {
                     throw new ZeroException();
                 }
                 result = div.operate(a,b);
+                break;
+            case '%':
+                result = mod.operate(a,b);
                 break;
             default:
                 throw new WrongSymbolException();
