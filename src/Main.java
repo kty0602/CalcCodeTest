@@ -39,9 +39,15 @@ public class Main {
                     sc.nextLine();
                     double result = cr.calculateCircleArea(r);
                     System.out.println("[답은] : " + result);
+                    System.out.print("[가장 먼저 저장된 연산 결과를 삭제하시겠습니까? (remove 입력 시 삭제)] : ");
+                    String remove = sc.nextLine();
+                    if (remove.equals("remove")) {
+                        cr.removeResult();
+                        System.out.println("[삭제되었습니다.]");
+                    }
                     System.out.print("[저장된 연산결과를 조회하시겠습니까? (circle 입력 시 조회)] : ");
-                    String inquiry = sc.nextLine();
-                    if (inquiry.equals("circle")) {
+                    String circle = sc.nextLine();
+                    if (circle.equals("circle")) {
                         System.out.println("[모든 계산 결과] : " + cr.inquiryResults());
                     }
                 } else {

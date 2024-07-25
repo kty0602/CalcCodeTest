@@ -1,25 +1,29 @@
 import java.util.ArrayList;
 
 public class ArthmeticCalculator extends Calculator {
+    AddOperator add = new AddOperator();
+    SubtractOperator sub = new SubtractOperator();
+    MultiplyOperator mul = new MultiplyOperator();
+    DivideOperator div = new DivideOperator();
 
     @Override
     public double calculate(double a, double b, char c) throws ZeroException, WrongSymbolException {
         double result = 0;
         switch (c) {
             case '+':
-                result = a + b;
+                result = add.operate(a,b);
                 break;
             case '-':
-                result = a - b;
+                result = sub.operate(a,b);
                 break;
             case '*':
-                result = a * b;
+                result = mul.operate(a,b);
                 break;
             case '/':
                 if (b == 0) {
                     throw new ZeroException();
                 }
-                result = a / b;
+                result = div.operate(a,b);
                 break;
             default:
                 throw new WrongSymbolException();
