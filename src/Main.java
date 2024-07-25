@@ -7,31 +7,49 @@ public class Main {
 
         while(true) {
             try {
-                System.out.print("첫번째 숫자를 입력해주세요. : ");
-                int a = sc.nextInt();
-                System.out.print("두번째 숫자를 입력해주세요. : ");
-                int b = sc.nextInt();
-                sc.nextLine();
-                System.out.println("[+,-,*,/]");
-                System.out.print("연산 기호를 입력해주세요. : ");
-                char c = sc.next().charAt(0);
-                float result = cal.calculate(a,b,c);
-                System.out.println("답은: " + result);
+                System.out.print("[1. 계산기 / 2. 원 넓이 계산 (번호를 선택해 주세요.)]: ");
+                int x = sc.nextInt();
+                if(x == 1) {
+                    System.out.print("[첫번째 숫자를 입력해주세요.] : ");
+                    int a = sc.nextInt();
+                    System.out.print("[두번째 숫자를 입력해주세요.] : ");
+                    int b = sc.nextInt();
+                    sc.nextLine();
+                    System.out.println("[+,-,*,/]");
+                    System.out.print("[연산 기호를 입력해주세요.] : ");
+                    char c = sc.next().charAt(0);
+                    float result = cal.calculate(a,b,c);
+                    System.out.println("[답은] : " + result);
+                    sc.nextLine();
+                    System.out.print("[가장 먼저 저장된 연산 결과를 삭제하시겠습니까? (remove 입력 시 삭제)] : ");
+                    String remove = sc.nextLine();
+                    if (remove.equals("remove")) {
+                        cal.removeResult();
+                        System.out.println("[삭제되었습니다.]");
+                    }
+                    System.out.print("[저장된 연산결과를 조회하시겠습니까? (inquiry 입력 시 조회)] : ");
+                    String inquiry = sc.nextLine();
+                    if (inquiry.equals("inquiry")) {
+                        System.out.println("[모든 계산 결과] : " + cal.inquiryResults());
+                    }
+                } else if(x == 2){
+                    System.out.print("[반지름 길이를 입력해주세요.] : ");
+                    double r = sc.nextInt();
+                    sc.nextLine();
+                    double result = cal.calculateCircleArea(r);
+                    System.out.println("[답은] : " + result);
+                    System.out.print("[저장된 연산결과를 조회하시겠습니까? (circle 입력 시 조회)] : ");
+                    String inquiry = sc.nextLine();
+                    if (inquiry.equals("circle")) {
+                        System.out.println("[모든 계산 결과] : " + cal.circleResults());
+                    }
+                } else {
+                    throw new Exception("잘못된 번호 값 입니다.");
+                }
             } catch(Exception e) {
                 System.out.println("오류 : "+ e.getMessage());
-            } finally {
                 sc.nextLine();
-                System.out.print("가장 먼저 저장된 연산 결과를 삭제하시겠습니까? (remove 입력 시 삭제) : ");
-                String remove = sc.nextLine();
-                if (remove.equals("remove")) {
-                    cal.removeResult();
-                    System.out.println("삭제되었습니다.");
-                }
-                System.out.print("저장된 연산결과를 조회하시겠습니까? (inquiry 입력 시 조회) : ");
-                String inquiry = sc.nextLine();
-                if (inquiry.equals("inquiry")) {
-                    System.out.println("모든 계산 결과: " + cal.inquiryResults());
-                }
+            } finally {
                 System.out.print("더 계산하시겠습니까? (exit 입력 시 종료) : ");
                 String symbol = sc.nextLine();
                 if (symbol.equals("exit")) {
