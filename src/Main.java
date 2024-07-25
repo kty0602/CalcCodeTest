@@ -3,7 +3,8 @@ import java.util.*;
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        Calculator cal = new Calculator();
+        ArthmeticCalculator ar = new ArthmeticCalculator();
+        CircleCalculator cr = new CircleCalculator();
 
         while(true) {
             try {
@@ -18,30 +19,30 @@ public class Main {
                     System.out.println("[+,-,*,/]");
                     System.out.print("[연산 기호를 입력해주세요.] : ");
                     char c = sc.next().charAt(0);
-                    float result = cal.calculate(a,b,c);
+                    double result = ar.calculate(a,b,c);
                     System.out.println("[답은] : " + result);
                     sc.nextLine();
                     System.out.print("[가장 먼저 저장된 연산 결과를 삭제하시겠습니까? (remove 입력 시 삭제)] : ");
                     String remove = sc.nextLine();
                     if (remove.equals("remove")) {
-                        cal.removeResult();
+                        ar.removeResult();
                         System.out.println("[삭제되었습니다.]");
                     }
                     System.out.print("[저장된 연산결과를 조회하시겠습니까? (inquiry 입력 시 조회)] : ");
                     String inquiry = sc.nextLine();
                     if (inquiry.equals("inquiry")) {
-                        System.out.println("[모든 계산 결과] : " + cal.inquiryResults());
+                        System.out.println("[모든 계산 결과] : " + ar.inquiryResults());
                     }
                 } else if(x == 2){
                     System.out.print("[반지름 길이를 입력해주세요.] : ");
                     double r = sc.nextInt();
                     sc.nextLine();
-                    double result = cal.calculateCircleArea(r);
+                    double result = cr.calculateCircleArea(r);
                     System.out.println("[답은] : " + result);
                     System.out.print("[저장된 연산결과를 조회하시겠습니까? (circle 입력 시 조회)] : ");
                     String inquiry = sc.nextLine();
                     if (inquiry.equals("circle")) {
-                        System.out.println("[모든 계산 결과] : " + cal.circleResults());
+                        System.out.println("[모든 계산 결과] : " + cr.inquiryResults());
                     }
                 } else {
                     throw new Exception("잘못된 번호 값 입니다.");
