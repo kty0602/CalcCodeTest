@@ -15,9 +15,9 @@ public class Main {
                 System.out.println("[+,-,*,/]");
                 System.out.print("연산 기호를 입력해주세요. : ");
                 char c = sc.next().charAt(0);
-                float result = cal.calculate(a, b, c);
+                float result = cal.calculate(a,b,c);
                 System.out.println("답은: " + result);
-            } catch(Exception e){
+            } catch(Exception e) {
                 System.out.println("오류 : "+ e.getMessage());
             } finally {
                 sc.nextLine();

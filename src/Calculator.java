@@ -1,6 +1,14 @@
 import java.util.*;
 public class Calculator {
     private ArrayList<Float> list = new ArrayList<>();
+
+    public ArrayList<Float> getList() {
+        return list;
+    }
+    public void setList(ArrayList<Float> list) {
+        this.list = list;
+    }
+
     public float calculate(int a, int b, char c) throws ZeroException, WrongSymbolException {
         float result = 0;
         switch (c) {
