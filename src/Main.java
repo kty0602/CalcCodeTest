@@ -21,6 +21,13 @@ public class Main {
                 System.out.println("오류 : "+ e.getMessage());
             } finally {
                 sc.nextLine();
+                System.out.print("가장 먼저 저장된 연산 결과를 삭제하시겠습니까? (remove 입력 시 삭제) : ");
+                String remove = sc.nextLine();
+                if (remove.equals("remove")) {
+                    cal.removeResult();
+                    System.out.println("삭제되었습니다.");
+                }
+
                 System.out.print("더 계산하시겠습니까? (exit 입력 시 종료) : ");
                 String symbol = sc.nextLine();
                 if (symbol.equals("exit")) {

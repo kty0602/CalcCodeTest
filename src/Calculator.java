@@ -9,6 +9,10 @@ public class Calculator {
         this.list = list;
     }
 
+    public void removeResult() {
+        list.remove(0);
+    }
+
     public float calculate(int a, int b, char c) throws ZeroException, WrongSymbolException {
         float result = 0;
         switch (c) {
