@@ -27,7 +27,11 @@ public class Main {
                     cal.removeResult();
                     System.out.println("삭제되었습니다.");
                 }
-
+                System.out.print("저장된 연산결과를 조회하시겠습니까? (inquiry 입력 시 조회) : ");
+                String inquiry = sc.nextLine();
+                if (inquiry.equals("inquiry")) {
+                    System.out.println("모든 계산 결과: " + cal.inquiryResults());
+                }
                 System.out.print("더 계산하시겠습니까? (exit 입력 시 종료) : ");
                 String symbol = sc.nextLine();
                 if (symbol.equals("exit")) {

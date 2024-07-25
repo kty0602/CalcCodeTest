@@ -13,6 +13,10 @@ public class Calculator {
         list.remove(0);
     }
 
+    public ArrayList<Float> inquiryResults() {
+        return getList();
+    }
+
     public float calculate(int a, int b, char c) throws ZeroException, WrongSymbolException {
         float result = 0;
         switch (c) {
