@@ -1,6 +1,10 @@
 import java.util.*;
 public class Calculator {
-    private ArrayList<Float> list = new ArrayList<>();
+    private ArrayList<Float> list;
+
+    public Calculator() {
+        this.list = new ArrayList<>();
+    }
 
     public ArrayList<Float> getList() {
         return list;
