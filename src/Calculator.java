@@ -10,6 +10,9 @@ public abstract class Calculator {
     public ArrayList<Double> getList() {
         return list;
     }
+
+    // 컬렉션 타입 필드인데 Setter로 수정, 삽입을 할 수 없다고 판단
+    // 요구사항으로 선언은 하지만, 실제로는 사용을 안할 것 같다.
     public void setList(ArrayList<Double> list) {
         this.list = list;
     }
