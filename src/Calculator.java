@@ -1,4 +1,6 @@
 import java.util.*;
+import Exception.*;
+
 public abstract class Calculator {
     // 모든 인스턴스가 공유할 수 있고 절대 변하지 않는 원주율 값이기 때문에 static, final을 사용하였다.
     static final double pi = 3.14;
@@ -36,16 +38,4 @@ public abstract class Calculator {
         return getList();
     }
 
-}
-
-class ZeroException extends Exception {
-    public ZeroException() {
-        super("분모에 0이 들어갈 수 없습니다!");
-    }
-}
-
-class WrongSymbolException extends Exception {
-    public WrongSymbolException() {
-        super("추가되지 않거나 잘못된 연산기호를 입력하였습니다.");
-    }
 }
