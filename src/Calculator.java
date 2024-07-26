@@ -3,7 +3,7 @@ public abstract class Calculator {
     // 모든 인스턴스가 공유할 수 있고 절대 변하지 않는 원주율 값이기 때문에 static, final을 사용하였다.
     static final double pi = 3.14;
 
-    public ArrayList<Double> list;
+    private ArrayList<Double> list;
 
     public ArrayList<Double> getList() {
         return list;
@@ -27,10 +27,15 @@ public abstract class Calculator {
     };
 
     // (공통)삭제 메서드
-    public abstract void removeResult();
+    public void removeResult() {
+        list.remove(0);
+    }
 
     // (공통)조회 메서드
-    public abstract ArrayList<Double> inquiryResults();
+    public ArrayList<Double> inquiryResults() {
+        return getList();
+    }
+
 }
 
 class ZeroException extends Exception {

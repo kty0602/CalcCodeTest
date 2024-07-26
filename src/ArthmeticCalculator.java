@@ -32,20 +32,8 @@ public class ArthmeticCalculator extends Calculator {
             default:
                 throw new WrongSymbolException();
         }
-        list.add(result);
+        getList().add(result);
         return result;
-    }
-
-    // 삭제 메서드
-    @Override
-    public void removeResult() {
-        list.remove(0);
-    }
-
-    // 조회 메서드
-    @Override
-    public ArrayList<Double> inquiryResults() {
-        return getList();
     }
 }
 
