@@ -18,28 +18,34 @@ public class ArthmeticCalculator extends Calculator {
 
     @Override
     public double calculate(double a, double b, char c) throws ZeroException, WrongSymbolException {
+        OperatorType operatorType;
+
+        // 매개변수 c값을 enum클래스로 넘겨 값을 비교시켜 연산 상수값 반환시킴
+        operatorType = OperatorType.operatorType(c);
+
         double result = 0;
-        switch (c) {
-            case '+':
+        // 반환받은 operatorType에 따라 switch문으로 operator에 해당 연산 처리를 위한 객체를 주입
+        switch (operatorType) {
+            case ADD:
                 setOperator(new AddOperator());
                 result = operator.operate(a,b);
                 break;
-            case '-':
+            case SUBTRACT:
                 setOperator(new SubtractOperator());
                 result = operator.operate(a,b);
                 break;
-            case '*':
+            case MULTIPLY:
                 setOperator(new MultiplyOperator());
                 result = operator.operate(a,b);
                 break;
-            case '/':
+            case DIVIDE:
                 if (b == 0) {
                     throw new ZeroException();
                 }
                 setOperator(new DivideOperator());
                 result = operator.operate(a,b);
                 break;
-            case '%':
+            case MOD:
                 setOperator(new ModOperator());
                 result = operator.operate(a,b);
                 break;

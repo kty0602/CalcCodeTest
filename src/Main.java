@@ -2,6 +2,7 @@ import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
+        // 숫자2개 연산자 1개를 입력받기 위해 Scanner 객체 생성
         Scanner sc = new Scanner(System.in);
         ArthmeticCalculator ar = new ArthmeticCalculator();
         CircleCalculator cr = new CircleCalculator();
@@ -15,12 +16,17 @@ public class Main {
                     int a = sc.nextInt();
                     System.out.print("[두번째 숫자를 입력해주세요.] : ");
                     int b = sc.nextInt();
+                    // 개행문자 삭제 처리를 위해
                     sc.nextLine();
                     System.out.println("[+,-,*,/,%]");
                     System.out.print("[연산 기호를 입력해주세요.] : ");
                     char c = sc.next().charAt(0);
+
+                    // ArthmeticCalculator클래스의 calculate메서드에 입력받은 숫자2개, 연산자1개를 매개변수로 보낸 후 결과값을
+                    // result변수에 저장
                     double result = ar.calculate(a,b,c);
                     System.out.println("[답은] : " + result);
+                    // 개행문자 삭제 처리를 위해
                     sc.nextLine();
                     System.out.print("[가장 먼저 저장된 연산 결과를 삭제하시겠습니까? (remove 입력 시 삭제)] : ");
                     String remove = sc.nextLine();
@@ -37,6 +43,8 @@ public class Main {
                     System.out.print("[반지름 길이를 입력해주세요.] : ");
                     double r = sc.nextInt();
                     sc.nextLine();
+
+                    // CircleCalculator객체의 calculateCircleArea메서드에 매개변수로 넘겨 값을 반환받아 result 변수에 저장
                     double result = cr.calculateCircleArea(r);
                     System.out.println("[답은] : " + result);
                     System.out.print("[가장 먼저 저장된 연산 결과를 삭제하시겠습니까? (remove 입력 시 삭제)] : ");
