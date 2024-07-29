@@ -1,4 +1,4 @@
-public interface Calc {
+public interface Calc<D extends Number> {
 
-    double operate(double a, double b);
+    D operate(D a, D b);
 }

@@ -1,12 +1,10 @@
-import java.util.ArrayList;
-
-public class CircleCalculator extends Calculator {
+public class CircleCalculator<D extends Number> extends Calculator<D> {
 
     @Override
-    public double calculateCircleArea(double r) {
-        double result = 0;
-        result = r*r*pi;
-        getList().add(result);
+    public double calculateCircleArea(D r) {
+        Double result;
+        result = r.doubleValue()*r.doubleValue()*pi;
+        getList().add((D) result);
         return result;
     }
 }
