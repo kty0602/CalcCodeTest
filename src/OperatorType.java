@@ -2,6 +2,7 @@ import Exception.WrongSymbolException;
 public enum OperatorType {
 
     // 상수("연관시킬 문자") 로 선언, c가 들어오면 해당하는 상수를 리턴시킨다.
+    // 참고 주소 : https://limkydev.tistory.com/66
     ADD('+'),
     SUBTRACT('-'),
     MULTIPLY('*'),

@@ -13,9 +13,9 @@ public class Main {
                 int x = sc.nextInt();
                 if(x == 1) {
                     System.out.print("[첫번째 숫자를 입력해주세요.] : ");
-                    int a = sc.nextInt();
+                    double a = sc.nextDouble();
                     System.out.print("[두번째 숫자를 입력해주세요.] : ");
-                    int b = sc.nextInt();
+                    double b = sc.nextDouble();
                     // 개행문자 삭제 처리를 위해
                     sc.nextLine();
                     System.out.println("[+,-,*,/,%]");
