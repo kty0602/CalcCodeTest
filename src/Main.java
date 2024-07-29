@@ -39,6 +39,14 @@ public class Main {
                     if (inquiry.equals("inquiry")) {
                         System.out.println("[모든 계산 결과] : " + ar.inquiryResults());
                     }
+                    System.out.print("[입력한 숫자보다 큰 연산결과를 조회하시겠습니까? (check 입력 시 조회)] : ");
+                    String check = sc.nextLine();
+                    if(check.equals("check")) {
+                        System.out.print("[숫자를 입력해주세요! (입력한 숫자보다 큰 값 조회)] : ");
+                        double d = sc.nextDouble();
+                        ar.CheckNumber(d);
+                        sc.nextLine();
+                    }
                 } else if(x == 2){
                     System.out.print("[반지름 길이를 입력해주세요.] : ");
                     double r = sc.nextInt();
@@ -57,6 +65,14 @@ public class Main {
                     String circle = sc.nextLine();
                     if (circle.equals("circle")) {
                         System.out.println("[모든 계산 결과] : " + cr.inquiryResults());
+                    }
+                    System.out.print("[입력한 숫자보다 큰 연산결과를 조회하시겠습니까? (check 입력 시 조회)] : ");
+                    String check = sc.nextLine();
+                    if(check.equals("check")) {
+                        System.out.print("[숫자를 입력해주세요! (입력한 숫자보다 큰 값 조회)] : ");
+                        double d = sc.nextDouble();
+                        cr.CheckNumber(d);
+                        sc.nextLine();
                     }
                 } else {
                     throw new Exception("잘못된 번호 값 입니다.");
